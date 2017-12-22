@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/swiper.css">
+    <link rel="stylesheet" href="css/jquery.pagination.css">
+    <style type="text/css">
+        body{
+            background: skyblue;
+        }
+        .swiper-container {
+            margin-top: 100px;
+            width: 790px;
+            height: 340px;
+        }
+    </style>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "微软雅黑";
+            background: #eee;
+        }
+        button {
+            display: inline-block;
+            padding: 6px 12px;
+            font-weight: 400;
+            line-height: 1.42857143;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            border-color: #28a4c9;
+            color: #fff;
+            background-color: #5bc0de;
+            margin: 20px 20px 0 0;
+        }     
+        .box {
+            width: 800px;
+            margin: 100px auto 0;
+            height: 34px;
+        } 
+        .page {
+            width: 600px;
+        }
+        .info {
+            width: 200px;
+            height: 34px;
+            line-height: 34px;
+        }
+        .fl {
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="img/1.jpg"></div>
+            <div class="swiper-slide"><img src="img/2.jpg"></div>
+            <div class="swiper-slide"><img src="img/3.jpg"></div>
+            <div class="swiper-slide"><img src="img/4.jpg"></div>
+            <div class="swiper-slide"><img src="img/5.jpg"></div>
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+
+        <!-- 如果需要导航按钮 -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <!-- 如果需要滚动条 -->
+        <!-- <div class="swiper-scrollbar"></div> -->
+    </div>
+
+    <div class="box">
+        <div id="pagination3" class="page fl"></div>
+        <div class="info fl">
+            <p>当前页数：<span id="current3">4</span></p>
+        </div>
+        <button id="getPage">getPage</button>
+        <button id="setPage">setPage</button>
+    </div>
+    <!-- pagination  分页器-->
+    <!-- current_page   当前选中的页面 可选参数，默认是0，表示第1页 -->
+    <!-- callback   回调函数 -->
+
+    <script type="text/javascript" src='libs/require.js' data-main='js/banner.js'></script>
+
+</body>
+</html>

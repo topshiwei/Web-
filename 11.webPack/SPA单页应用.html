@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #content{
+            height: 500px;
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+       <a href="#home">主页</a>
+       <a href="#friend">朋友</a>
+       <a href="#my">我的音乐</a>         
+    <nav>
+
+    <main id="content">
+
+    </main>
+
+    <footer>
+        <h1><button>播放</button></h1>
+    </footer>
+        
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/core.js"></script>
+    <script>
+        // 单页应用: SPA(single page application)
+        // 路由:根据不同的hash值加载不同的页面(模块)
+        window.addEventListener('hashchange',function(){
+            console.log(window.location.hash);
+            switch(window.location.hash){
+                case '#home':
+                    $('#content').load('./home.html');
+                    break;
+                case '#friend':
+                    $('#content').load('./friend.html');
+                    break;
+                case '#my':
+                    $('#content').load('./my.html');
+                    break;
+                default:
+            }
+        })
+    </script>
+</body>
+</html>

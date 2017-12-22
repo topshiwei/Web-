@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 1:数组的解构赋值
+        // 从数组中提取值，按照位置的对象关系对变量赋值
+        let [a, b, c] = [100, 200, 300];
+        console.log(a, b, c);
+
+        let json = {
+            listData: [{name: 'a'}, {name: 'b'}, {name: 'c'}, {name: 'd'}],
+            menu: [{name: 'e'}, {name: 'f'}, {name: 'g'}]
+        }
+        let [a, b, c, d] = json.listData;
+        console.log(a, b, c, d);
+        let [xe, xf, xg] = json.menu;
+        console.log(xe, xf, xg);
+
+    // 2:对象的解构赋值
+        // 对象声明变量时变量名要与对象的key值保持一致
+        let obj = {
+            name: [1,2,3,4,5,6],
+            age: '18',
+            sayHi: function() {
+                console.log(11111);
+            }
+        }
+        let {name,age,sayHi} = obj;
+        console.log(name, age, sayHi);
+
+        let json = {
+            listData: [{name: 'a'}, {name: 'b'}, {name: 'c'}, {name: 'd'}],
+            menu: [{name: 'e'}, {name: 'f'}, {name: 'g'}]
+        }
+        let {listData:[a,b,c,d],menu:[e,f,g]} = json;
+        console.log(json);
+
+    // 3:对象的函数解构
+        let obj = {
+            name: 'shiwei',
+            age: 18
+        }
+        function foo({name, age}) {
+            console.log(name,age);
+        }
+        foo(obj);
+
+        let data = {
+            listData: [{name: 'a'}, {name: 'b'}, {name: 'c'}, {name: 'd'}],
+            menu: [{name: 'e'}, {name: 'f'}, {name: 'g'}]
+        }
+        function dataList({listData:[a,b,c,d],menu:[e,f,g]}) {
+            console.log(a,b,c,d,e,f,g);
+        }
+        dataList(data);
+
+    // 4:数组的函数解构
+        let arr = ['hello', 'world', '!'];
+
+        function bar([xa, xb, xc]) {//区别形参里加方括弧
+            console.log(xa, xb, xc);
+        }
+        bar(arr);
+
+        function bar(xa, xb, xc) {//区别形参里没加方括弧
+            console.log(xa, xb, xc);
+        }
+        bar(...arr);//...表示扩展运算符
+
+        let arr1 = [1, 2, 3, 4, 5];
+        let arr2 = [...arr1];
+        arr2.push('hello');
+        console.log(...arr2);
+    </script>
+</body>
+</html>

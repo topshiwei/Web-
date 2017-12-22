@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+    // 构造函数,类
+    // function Person(name) {
+    //     this.name = name;
+    //     this.sayHi = function() {
+    //         console.log('sss');
+    //     }
+    // }
+    // p1实例对象
+    // let p1 = new Person('小明');
+    // console.log(p1.name);
+
+    // function Student() {
+
+    // }
+    // Student.prototype = new Person();
+    // Student.prototype.constructor = Student;
+    // let stu = new Student();
+    // stu.sayHi();
+    // Object.prototype.sayHi = function() {
+
+    // }
+    // p1.sayHi();
+
+
+    // ES6类
+    class Person {
+        constructor(name) {
+            this.name = name;
+            this.sayHi = function() {
+                console.log(name);
+            }
+        }
+        sayHello() {
+            console.log('ssss');
+        }
+    }
+    // p1实例对象
+    let p1 = new Person('赵育博');
+    console.log(p1.name);
+    p1.sayHi();
+    p1.sayHello();
+
+    class Student extends Person {
+        constructor(name) {
+            super(name);
+            this.name = name;
+        }
+    }
+    let stu = new Student('李士杰');
+    console.log(stu.name);
+    stu.sayHello();
+</script>
+</html>

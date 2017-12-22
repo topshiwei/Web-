@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+    let a = new String();
+    let num = new Number();
+    let bol = new Boolean();
+    let arr = new Array();
+    // let obj = new Object();
+
+    let symbol = Symbol();
+    let sayHi = Symbol();
+    // 使用Symbol来进行循环保护
+    let obj = {
+        [symbol]: '石威', //Symbol对象元素的保护作用
+        age: 18,
+        [sayHi]() {
+            console.log(this[symbol]);
+        }
+    }
+    for (let key in obj) {
+        console.log(key);
+    }
+</script>
+</html>

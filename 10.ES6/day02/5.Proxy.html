@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="text"></h1>
+</body>
+<script>
+    // vue 3.0之前,Object.defineProperty()
+    // vue 3.0会使用proxy来做双向数据绑定
+    // 通过get和set方法可以检测到对象的属性变化
+    var obj = {
+        name: '石威',
+        age: 18
+    }
+    let proxy = new Proxy(obj, {
+        get: function(target, key, receiver) {
+            console.log('GET--->我们开始获取值操作', receiver, 'ggg');
+            return target[key];
+        },
+        set: function(target, key, value, receiver) {
+            text.innerHTML = value;
+            console.log('SET--->我们开始赋值操作', receiver, 'sss');
+            return target[key] = value;
+        }
+    });
+    console.log(proxy.age);
+    text.innerHTML = proxy.name;
+
+    document.onclick = function() {
+        proxy.name = '哈哈哈哈';
+    }
+</script>
+</html>

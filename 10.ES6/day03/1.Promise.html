@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script src="axios.js"></script>
+<script>
+    axios('http://gitnano.com/shuju/gwc/list.php')
+        .then(function(data) {
+            console.log('111111', data);
+            return axios('http://gitnano.com/shuju/gwc/list.php');
+        })
+        .then(function(data) {
+            console.log('222222', data);
+            return axios('http://gitnano.com/shuju/gwc/list.php');
+        })
+        .then(function(data) {
+            console.log('333333', data);
+        })
+        .catch(function(data) {
+            console.log('error');
+        })
+
+    // 用户买票
+    // 1:ajax请求后台,查看是否有余票 -> 余票数量
+    // 2:ajax请求后台,开始购买(身份证号,价格,地址,时间) -> 订单号
+    // 3:ajax请求后台,比对订单号是否存在, -> {msg:'成功',error:0}
+
+
+    let p1 = axios('http://gitnano.com/shuju/getParma.php?comID=meiguo');
+    let p2 = axios('http://gitnano.com/shuju/gwc/list.php');
+    let p3 = axios('http://gitnano.com/shuju/getParma.php?comID=hainan');
+
+    // 当所有任务都执行完毕之后,调用then方法
+    Promise.all([p1, p2, p3])
+        .then(function(data) {
+            console.log(data);
+        });
+
+    // 执行速度最快的任务
+    Promise.race([p1, p2, p3])
+        .then(function(data) {
+            console.log(data)
+        })
+
+    function Promise(){
+
+    }
+    Promise.all = function(){
+
+    }
+    Promise.all();
+
+    function thenFn(){
+        return axios('');
+    }
+    thenFn()
+
+    .then(function(){
+
+    })
+    .catch(function(){
+
+    })
+</script>
+</html>

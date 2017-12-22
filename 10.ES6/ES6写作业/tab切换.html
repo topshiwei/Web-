@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		.box{
+			width: 1052px;
+			margin: 100px auto;
+			overflow: hidden;
+			background: #0b6983;
+		}
+		.left,.right{
+			float: left;
+		}
+		.left{
+			width: 200px;
+			background: #03ccbb;
+			color: #FFF;
+		}
+		.left li{
+			line-height: 31px;
+			text-align: center;
+			font-weight: bold;
+		}
+		.left li.active{
+			background: #F90;
+		}
+		.right{
+			width: 852px;
+			height: 496px;
+			position: relative;
+			/* display: none; */
+		}
+		.right li{
+			position: absolute;
+			background: #F90;
+			left: 0;
+			top: 0;
+			height: 100%;
+			width: 100%;
+			text-align: center;
+			line-height: 496px;
+			font-weight: bold;
+			font-size: 200px;
+			color: #FFF;
+		}
+	</style>
+</head>
+<body>
+    <div class="box">
+        <ul class="left">
+            <li>男装/运动户外1</li>
+            <li>男装/运动户外2</li>
+            <li>男装/运动户外3</li>
+            <li>男装/运动户外4</li>
+            <li>男装/运动户外5</li>
+            <li>男装/运动户外6</li>
+            <li>男装/运动户外7</li>
+			<li>男装/运动户外8</li>
+			<li>男装/运动户外9</li>
+			<li>男装/运动户外10</li>
+			<li>男装/运动户外11</li>
+			<li>男装/运动户外12</li>
+			<li>男装/运动户外13</li>
+			<li>男装/运动户外14</li>
+			<li>男装/运动户外15</li>
+			<li>男装/运动户外16</li>
+        </ul>
+        <ul class="right">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+			<li>8</li>
+			<li>9</li>
+			<li>10</li>
+			<li>11</li>
+			<li>12</li>
+			<li>13</li>
+			<li>14</li>
+			<li>15</li>
+			<li>16</li>
+        </ul>
+    </div>
+    <script>
+        let btns = document.querySelectorAll('.left li');
+        let divs = document.querySelectorAll('.right li');
+        for(let [index] of btns.entries()){
+            btns[index].onmouseenter = function(){
+                for(let [i,val] of divs.entries()){
+                    divs[i].style.display = 'none';
+                    btns[i].style.background = '';
+                }
+                this.style.background = '#f90';
+                divs[index].style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

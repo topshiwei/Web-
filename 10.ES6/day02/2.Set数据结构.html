@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+    // 【注意】Set数据结构,注意这里不是数据类型,而是数据结构
+    // 可以做数组去重
+    var arr = ['a', 'b', 'c', 12, 23, 34, 22, 33, 22, 45];
+    // [...setArr]转换成数组
+    let setArr = new Set(arr);
+    // console.log([...setArr]);
+    
+    // 1:delete():删除对应元素
+        // setArr.delete('a');
+        // console.log([...setArr]);
+
+    // 2:has():查找是否存在元素(返回true或false)
+        // setArr.has('b');
+        // console.log(setArr.has('b'));
+
+    // 3:clear():删除所有元素
+        // setArr.clear();
+        // console.log([...setArr]);
+
+    // 4:add():向末尾添加一个元素
+        // setArr.add('shiwei');
+        // console.log([...setArr]);
+
+    // 5:size:元素长度
+        // setArr.size;
+        // console.log(setArr.size);
+
+    // 6:遍历数组里面所有的值
+        // for (let item of setArr) {
+        //     console.log(item);
+        // }
+
+    // var arr2 = [1, 2, 3, 4, 5, 6];
+    // arr2.length = 0;
+    // while (arr2.pop()) {
+    //     console.log(arr2);
+    // }
+
+    // for (let i = 0, len = arr2.length; i < len; i++) {
+    //     arr2.pop();
+    // }
+    // console.log(arr2);
+</script>
+</html>

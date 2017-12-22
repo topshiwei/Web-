@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+    // Map结构提供了“key—value”的对应,是一种更完善的Hash结构实现.如果你需要“键值对”的数据结构,Map比Object更合适.
+    // 它类似于对象,也是键值对的集合,但是“键”的范围不限于字符串,各种类型的值（包括对象）都可以当作键.
+        let obj = {
+            name: 'shiwei',
+            age: 19,
+            bol: true,
+            list: [],
+            sayHi: function() {
+                console.log(1111111);
+            }
+        }
+        // console.log(obj);
+
+        let map = new Map();
+        map.set(obj, '石威');
+        console.log(map.get(obj));
+
+        map.set('石威', obj);
+        console.log(map.get('石威'));
+
+        // has():查找是否存在元素(返回true或false)
+        // console.log(map.has('石威'));
+
+        // delete():删除对应元素
+        // console.log(map.delete('石威'));
+
+        // clear():删除所有元素
+        // console.log(map.clear());
+
+        // size长度
+        // console.log(map.size);
+</script>
+</html>

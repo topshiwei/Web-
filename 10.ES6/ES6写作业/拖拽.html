@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width:100px;
+            height:100px;
+            background: red;
+            position:absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+
+    <script>
+        class Pen {
+            constructor() {
+                document.onmousedown = this.down.bind(this);
+            }
+            down() {
+                document.onmousemove = this.move.bind(this);
+                document.onmouseup = this.up.bind(this);
+            }
+            move(e) {
+                var e = e || event;
+                var div = document.getElementById("box");
+                div.style.cssText = "left:" + e.clientX + "px; top:" + e.clientY + "px;";
+                // div.style.background = "blue";
+            }
+            up() {
+                document.onmousemove = null;
+                document.onmouseup = null;
+            }
+        }
+
+        new Pen();
+
+    </script>
+</body>
+</html>

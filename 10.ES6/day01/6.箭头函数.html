@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+    // 声明有名的箭头函数
+    // 1:普通函数
+        let add = function(a, b) {
+            return a + b;
+        }
+        let res = add(100, 200);
+        console.log(res);
+
+    // 2:箭头函数
+        let add = (a, b) => {
+            return a + b;
+        }
+        let res = add(100, 200);
+        console.log(res);
+
+    // 3:箭头函数
+        let add = (a, b) => a + b;
+        let res = add(100, 200);
+        console.log(res);
+
+    // 4:{}的使用
+    // 在箭头函数中,方法体内如果是两句话,那就需要在方法体外边加上{}括号,例如下边的代码就必须使用{}
+        let add = (a, b) => {
+            a = a * 10;
+            b = b * 20;
+            return a + b;
+        }
+        let res = add(100, 200);
+        console.log(res);
+
+    // 5:箭头函数作为匿名函数调用
+        setTimeout(() => {
+            alert(1);
+        }, 500);
+
+    // 1: 箭头函数里面的this指向上层对象
+    // 2: 函数不能当构造函数进行使用。
+        var obj = {
+            name: 'lishijie',
+            age: 18,
+            sayHi: function() {
+                setTimeout(() => {
+                    console.log(this);//this指向obj对象本身
+                }, 500);
+            }
+        }
+        obj.sayHi();
+
+    // 3:函数在对象里面声明
+        var obj = {
+            name: 'shiwei',
+            sayHi() {
+                console.log(this.name);
+            }
+        }
+        obj.sayHi();
+        
+</script>
+</html>

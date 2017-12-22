@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="uls">
+        <!-- <li>
+            <div>
+                <div><img src="" alt=""></div>
+                <div><h4></h4></div>
+            </div>
+        </li> -->
+    </ul>
+</body>
+<script>
+    let obj = {
+        dataList: [{
+            name: '红烧肉'
+        }, {
+            name: '宫保鸡丁'
+        }, {
+            name: '回锅肉'
+        }, {
+            name: '红烧排骨'
+        }, {
+            name: '黄焖鸡'
+        }]
+    }
+    let uls = document.getElementById('uls');
+    // ES6中新特性用反单引号(``)来解决字符串拼接烦琐问题,动态使用时要用${}包起来
+    for (let i = 0; i < obj.dataList.length; i++) {
+        let li = document.createElement('li');
+        li.innerHTML =
+        `
+            <div>
+                <div><img src="${obj.dataList[i].icon}" alt=""></div>
+                <div><h4>${obj.dataList[i].name}</h4></div>
+            </div>
+        `;
+        uls.appendChild(li);
+    }
+
+    // 判断字母z是否在str里面
+    let str = 'ueworhjakbfiqwhuifbnjakbbansdhas';
+    // ES5中用indexOf判断
+    let bol = str.indexOf('z');
+    if (bol != -1) {
+        console.log('找到了');
+    }else{
+        console.log('没找到');
+    }
+
+    // 1:includes:查找字符串里的元素是否存在(返回true或false)
+    console.log(str.includes('z'));
+
+    // 2:startsWith:判断开头是否存在(返回true或false)
+    console.log(str.startsWith('shiwei'));
+
+    // 3:endsWith:判断结尾是否存在(返回true或false)
+    console.log(str.endsWith('s'));
+
+</script>
+</html>

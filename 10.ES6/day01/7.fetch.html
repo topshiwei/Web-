@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+    // 获取用户信息
+        // ajax - >   id
+        // ajax - >   name
+        // ajax - >  用户信息
+
+    // 回调地狱
+        // ajax('http://wwwxxxx').done(function(id){
+        //     ajax('http:/wwwxxxxx').done(function(name){
+        //         ajax('http:wwwxxxx?id=id&name=name').done(function(data){
+
+        //         })
+        //     })
+        // })
+
+    // 代码清晰
+        // fetch('xxxxx',function(id){
+
+        // })
+        // .then(function(){
+
+        // })
+        // .then(function(){
+
+        // })
+        // .catch(function(){
+
+        // })
+
+    fetch('http://gitnano.com/shuju/gwc/list.php')
+        .then(function(respose) {
+            return respose.json();
+        })
+        .then(function(data) {
+            console.log(data);
+        })
+
+</script>
+</html>

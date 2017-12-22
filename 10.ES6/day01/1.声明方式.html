@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 三种声明方式
+        // var 
+        // let
+        // const 指定义常量,不被修改的
+        // 1:不存在变量提升
+        console.log(a);
+        let a = 100;
+        // 2:暂时性死区
+        // 3:不允许重复声明
+        // 4:块级作用域
+        // 用let声明只能在花括号内部调用,在花括号外部调用就会报错
+        for (let i = 0; i < 100; i++) {
+            // console.log(i);
+        }
+        console.log(i);
+
+        let arr = [];
+        for (let i = 0; i < 10; i++) {
+            arr[i] = function() {
+                console.log(i);
+            }
+        }
+        arr[5]();
+
+        let a = 100;
+        let a = 200;
+        for (let i = 0; i < 10; i++) {
+
+        }
+        console.log(i)
+
+        const baseUrl = 'http://www.baidu.com';
+
+        var tmp = 123;
+        if (true) {
+            let tmp;
+            tmp = 'ssss'
+            console.log(tmp)
+        }
+
+        let a = 300;
+        a = 100;
+
+        PI = '21312';
+        console.log(PI)
+
+        // let声明的全局变量,不再挂载winodow对象上
+        let a = 100;
+        console.log(this.a)
+
+        // global
+        let a = 100;
+        console.log(window.a === a);
+    </script>
+</body>
+</html>

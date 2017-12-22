@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+    // 1:Array.from:将json数组格式转换为数组
+        // json数组格式
+        let json = {
+            "0": "asdasd",
+            "1": "qweqwe",
+            "2": [],
+            length: 3
+        }
+        let arr = Array.from(json);
+        console.log(arr);
+
+    // 2:把一堆文本或者变量转换成数组Array.of
+        let arr = Array.of('asd', 'qwe', 'reter');
+        console.log(arr);
+
+    // 3:filter(括号传参)实例方法:
+        // 传入三个参数：
+            // a:value：表示当前查找的值。
+            // b:index：表示当前查找的数组索引。
+            // c:arr：表示当前数组
+        // 后台返回一组学生的分数,要求拿到90分以上的
+        let arr = [90, 89, 93, 86, 94, 75, 26, 64, 59, 84, 100];
+        let result = arr.filter(function(val, index, arr) {
+            return val >= 90;
+        });
+        console.log(result);
+
+    // 【面试题】filter()与find()之间的区别?
+    // 【区别】:filter找到所有条件满足的值停止,find找到条件满足的值停止
+
+    // 4:find()
+        let arr = ['a', 'b', 'c'];
+        arr.splice(1, 1, 'B');
+        console.log(arr);
+        arr.splice(2, 0, 'D');
+        console.log(arr);
+
+    // 5:fill()
+        // 它的作用是把数组进行填充,它接收三个参数:
+        // 1:第一个参数是填充的变量
+        // 2:第二个是开始填充的位置
+        // 3:第三个是填充到的位置
+        // 代码的意思是,从第0位到第2位用lishijie进行填充
+        let arr = ['a', 'b', 'c', 'd'];
+        arr.fill('lishijie', 0, 2);
+        console.log(arr);
+
+    // 6:for..of循环(性能高)
+        let arr = [123, 356, 234, 123, 360, 123, 765, 435];
+        // 1:遍历值
+        for (let val of arr) {
+            console.log(val);
+        }
+
+        // 2:遍历索引
+        for (let index of arr.keys()) {
+            console.log(index);
+        }
+
+        // 3:遍历index和value
+        for (let [index, val] of arr.entries()) {
+            console.log(index, val);
+        }
+
+</script>
+</html>

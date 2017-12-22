@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="inp1">
+    <select>
+        <option>+</option>
+        <option>-</option>
+        <option>×</option>
+        <option>÷</option>
+    </select>
+    <input type="text" name="" id="inp2">
+    <button id="btn">=</button>
+    <h1 id="result"></h1>
+    <script type="text/javascript" src='1.jisuan.js'></script>
+    <script type="text/javascript">
+        var btn = document.getElementById('btn');
+        var inp1 = document.getElementById('inp1');
+        var inp2 = document.getElementById('inp2');
+        var sel = document.getElementsByTagName('select')[0];
+        var result = document.getElementById('result');
+        btn.onclick = function(){
+            var a = parseInt(inp1.value);
+            var b = parseInt(inp2.value);
+            var c = sel.value;
+            switch(c) {
+                case '+':
+                    result.innerHTML = jia(a,b);
+                    break;
+                case '-':
+                    result.innerHTML = jian(a,b);
+                    break;
+                case '×':
+                    result.innerHTML = cheng(a,b);
+                    break;
+                case '÷':
+                    result.innerHTML = chu(a,b);
+                    break;
+            }
+        }
+        
+    </script>
+</body>
+</html>

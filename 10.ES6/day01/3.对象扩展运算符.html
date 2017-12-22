@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</body>
+<script>
+    // 伪数组arrayLike ---> 类似于数组
+    let lis = document.getElementsByTagName('li');
+    function foo(...arguments) {
+        let arr = [];
+        for (let i = 0; i < arguments.length; i++) {
+            arr.push(arguments[i]);
+        }
+        arr.pop();
+        console.log(arr);
+    }
+    foo(1, 2, 3, 4, 5, 6, 7);
+
+    // 1:扩展运算符...
+    // 2:rest运算符...(剩余部分的参数存放到arguments)
+    // deconstruction:解构的意思
+    function bar(name, age, ...arg) {
+        console.log(name);
+        console.log(age);
+        console.log(arg);
+    }
+    bar('shiwei', '18', 'asdasd', 'cfssd', 'qweqw', 'dgdfgdf');
+    
+</script>
+</html>

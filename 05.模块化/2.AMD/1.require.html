@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        #redDiv{
+            width: 300px;
+            height: 300px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="redDiv"></div>
+    <!--
+        script异步加载requireJS
+        1:将js代码放到结构之后加载
+        2:对script添加一个async属性值为true代表异步加载,但是IE不支持,IE需要用到defer
+     -->
+    <script type="text/javascript" async='true' defer src='require.js' data-main='index.js'></script>
+
+</body>
+</html>

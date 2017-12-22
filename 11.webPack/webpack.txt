@@ -1,0 +1,22 @@
+什么是webpack?
+webPack可以看做是模块打包机:它做的事情是,分析你的项目结构,
+找到JavaScript模块以及其它的一些浏览器不能直接运行的扩展语言(Sass,less,.vue等),
+并将其转换和打包为合适的格式供浏览器使用,在3.0出现后webpack还担负的优化项目的责任在3.0出现后webpack还担负的优化项目的责任
+
+
+第一部:安装webpack: cnpm install webpack -g
+第二部:创建点json文件: cnpm init -y
+第三部:把webpack安装到本地文件: cnpm install webpack --save-dev
+第四部:创建一个配置webpack的js文件,名为webpack.config.js 
+[注意]:如果遇到webpack不能使用的时候,就在package里面的scripts里面输入"dev":"webpack",然后命令行输入 npm run dev
+第五部:热更新: cnpm install webpack-dev-server --save-dev
+        在package里面的scripts里面输入"server":"webpack-dev-server --open",然后命令行输入 npm run server
+
+        cnpm install style-loader --save-dev
+        cnpm install css-loader --save-dev
+        cnpm install uglifyjs-webpack-plugin --save-dev
+        cnpm install html-webpack-plugin --save-dev 做html的代码压缩
+        cnpm install file-loader url-loader --save-dev 压缩图片
+        webpack先打包,再npm run server 服务器运行
+        cnpm install node-sass --save-dev
+        cnpm install sass-loader --save-dev

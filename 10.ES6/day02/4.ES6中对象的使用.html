@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+    // let name = 'shiwei';
+    // let age = 18;
+    // function sayHi() {
+
+    // }
+    // 1:ES6中的用法
+    // let obj = {
+    //     name,
+    //     age,
+    //     sayHi,
+    //     sayHello: function() {
+
+    //     }
+    // }
+    // console.log(obj);
+
+    // let obj = {
+    //     name: name,
+    //     age: age,
+    //     sayHi: sayHi
+    // }
+    // console.log(obj);
+
+    // let arr1 = [1, 2, 3];
+    // let arr2 = [4, 5, 6];
+    // let arr3 = [7, 8, 9];
+    // 2:数组合并
+    // let allArr = [...arr1, ...arr2, ...arr3];
+    // console.log(allArr);
+
+    // 3:对象合并
+    // let obj1 = {
+    //     name: '小王',
+    //     age: 20
+    // }
+    // assign拷贝对象,合并对象
+    // let obj2 = Object.assign({}, obj1);
+    // obj2.name = '小李';
+    // console.log(obj1);
+
+    let obj1 = {
+        name: '小王',
+        age: 20
+    }
+
+    let obj2 = {
+        hobby: '打篮球'
+    }
+
+    let obj3 = {
+        sex: '男'
+    }
+    let obj4 = Object.assign({}, obj1, obj2, obj3);
+    console.log(obj4);
+</script>
+</html>
